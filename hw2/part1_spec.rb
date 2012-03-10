@@ -37,3 +37,32 @@ describe Numeric do
     end
   end
 end
+
+describe String do
+  context 'palindrome' do
+    subject { "A man, a plan, a canal -- Panama" }
+    it { should be_a_palindrome }
+  end
+
+  context 'non-palindrome' do
+    subject { "Abracadabra" }
+    it { should_not be_a_palindrome }
+  end
+end
+
+describe 'Enumerable palindromes' do
+  context 'array palindrome' do
+    subject { [1,2,3,2,1] }
+    it { should be_a_palindrome }
+  end
+
+  context 'array palindrome' do
+    subject { [1,2,3,2,2] }
+    it { should_not be_a_palindrome }
+  end
+
+  context 'hash' do
+    subject { {a: 1, b: 2} }
+    it { should_not be_a_palindrome }
+  end
+end

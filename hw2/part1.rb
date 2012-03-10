@@ -25,3 +25,17 @@ class Numeric
     end
   end
 end
+
+class String
+  def palindrome?
+    normalized_string = self.downcase.gsub(/[^a-z]+/, '')
+    normalized_string == normalized_string.reverse
+  end
+end
+
+module Enumerable
+  def palindrome?
+    return false unless respond_to? :reverse
+    self == self.reverse
+  end
+end
