@@ -21,7 +21,7 @@ describe Numeric do
 
   context 'yen' do
     it 'should convert to euros' do
-      5000.yen.in(:euros).should be_within(0.1).of(50.31)
+      5000.yen.in(:euro).should be_within(0.1).of(50.31)
     end
 
     it 'should convert to rupees' do
