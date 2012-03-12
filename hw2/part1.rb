@@ -35,7 +35,6 @@ end
 
 module Enumerable
   def palindrome?
-    return false unless respond_to? :reverse
-    self == self.reverse
+    self.to_a == self.to_a.reverse
   end
 end
